@@ -1,11 +1,11 @@
 [
   {
-    "id": "1234",
+    "ID": "1234",
     "name": "In the sunburned country",
     "author": "Bill Bryson"
   },
   {
-    "id": "2345",
+    "ID": "2345",
     "name": "The picture of Dorian Gray",
     "author": "Oscar Wilde"
   }

@@ -12,16 +12,22 @@ import (
 	"github.com/gorilla/rpc/json"
 )
 
+//Args comment
 type Args struct {
-	Id string
+	ID string
 }
+
+//Book comment
 type Book struct {
-	Id     string `"json:string,omitempty"`
+	ID     string `"json:"string,omitempty"`
 	Name   string `"json:name,omitempty"`
 	Author string `"json:author,omitempty"`
 }
+
+// JSONServer struct
 type JSONServer struct{}
 
+//GiveBookDetail comment
 func (t *JSONServer) GiveBookDetail(r *http.Request, args *Args, reply *Book) error {
 	var books []Book
 	raw, readerr := ioutil.ReadFile("./books.json")
@@ -36,7 +42,7 @@ func (t *JSONServer) GiveBookDetail(r *http.Request, args *Args, reply *Book) er
 	}
 	// Iterate over JSON data to find the given book
 	for _, book := range books {
-		if book.Id == args.Id {
+		if book.ID == args.ID {
 			*reply = book
 			break
 		}
